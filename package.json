@@ -1,0 +1,41 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "contributors": [],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "compile": "tsc",
+    "tailwind:build": "npx tailwindcss -i ./src/styles/tailwind.css -o ./dist/src/styles/main.css --minify",
+    "copy-assets": "rsync -av --include='node_modules/' --include='package.json' --include='package-lock.json' --include='manifest.json' --include='*/' --include='*.html' --exclude='*' ./ dist/",
+    "build": "npm run clean && npm run compile && npm run tailwind:build && npm run copy-assets"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "@types/chrome": "^0.1.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  }
+}

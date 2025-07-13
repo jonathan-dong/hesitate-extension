@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Hesitate",
+  "version": "1.0.0",
+  "description": "A Chrome extension that adds a moment of intention before visiting distracting sites.",
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/blocker.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

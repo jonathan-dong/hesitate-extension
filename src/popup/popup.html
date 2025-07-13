@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hesitate Focus Mode</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+  </head>
+  <body
+    class="bg-neutral-100 text-neutral-900 font-sans p-6 min-w-[300px] min-h-[240px]"
+  >
+    <div class="flex items-center justify-between mb-8">
+      <span class="text-xl font-semibold tracking-tight">Focus Mode</span>
+      <button
+        id="focus-toggle"
+        type="button"
+        class="relative inline-flex h-8 w-14 items-center rounded-full transition-colors duration-200 focus:outline-none bg-neutral-300"
+        aria-pressed="false"
+      >
+        <span class="sr-only">Toggle Focus Mode</span>
+        <span
+          class="inline-block h-7 w-7 transform rounded-full bg-white shadow transition-transform duration-200"
+        ></span>
+      </button>
+    </div>
+    <div class="mb-4">
+      <label for="url-input" class="block text-sm font-medium mb-2"
+        >Block a URL</label
+      >
+      <div class="flex">
+        <input
+          type="text"
+          id="url-input"
+          placeholder="Add URL to block"
+          class="flex-1 px-3 py-2 rounded-l-lg bg-neutral-200 text-neutral-900 outline-none border border-neutral-300 focus:bg-white focus:border-blue-500 transition"
+        />
+        <button
+          id="add-btn"
+          class="px-4 py-2 rounded-r-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+    <ul
+      id="url-list"
+      class="space-y-2 max-h-28 overflow-y-auto text-[15px]"
+    ></ul>
+    <script src="popup.js"></script>
+  </body>
+</html>
